@@ -1,31 +1,72 @@
+body{
+    display: flex;
+    flex-direction: column;
+  background-color: lemonchiffon; /*common */
+    }
 .logo {
-    display: block; font-size: 1.5rem;
- }
+    display: block; 
+    font-size: 1.5rem; /* common title */
+    color: blueviolet;
+    text-align: center;
+    background-color: darkkhaki;
+     }
 
 .main_class {}
 
-.details_container {}
+.details-container {
+    display: flex;
+    flex-direction: column; /* top image column*/
+    align-items: center; /* top image centre */
+    margin-top: 5vh; /*space between title and top image*/  
+                   }
 
-.details-img {
-    width: 12em; height: 5em;
-}
+.details-image {
+    width:14em; height: 7em;
+    border-radius: 25%;
+    border: solid 1.5px; color: chocolate;  
+               }
 
 .details-title {
+    /* title Rovenna */
     display: block; 
-}
+    text-align: center;
+color: darkgoldenrod;
+font-size: 1.2em; 
+               }
 
 .thumbnail-list {
-    list-style: none; 
-}
+    /* common block with images */
+    list-style: none; /* non-numeration */
+    display: flex;
+    flex-direction: row; /* images in row */
+    flex-wrap: wrap;  /* on the nest row */
+    max-height: 31.6vh; /*size of visual part */
+    overflow-y: auto; /* scroll vertical only small images 
+            according max-height*/
+    justify-content: space-around; /* space between images*/
+    padding: 0%; /*without left spase */
+                 }
 
-.thumbnail-item {}
+.thumbnail-item {
+    display: flex;
+    border: solid 1.2px blue;
+    background-color: khaki;
+    margin-top: 2.8vh; /*space between rows*/
+    border-radius: 25%; /*oval image*/
+    overflow: hidden; /* without corner */
+                }
 
-.thumbnail-anchor {}
+.thumbnail-anchor {
+    text-decoration: none;
+                  }
 
 .thumbnail-img {
-    width: 5em; height: 5em;
-}
+    width: 25vw; height: 20vw;
+               }
 
 .thumbnail-title {
     display: block; 
-}
+    text-align: center;
+    height: 5vw;
+    color: blue;
+                 }

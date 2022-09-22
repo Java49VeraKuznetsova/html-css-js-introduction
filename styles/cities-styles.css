@@ -1,14 +1,26 @@
+@font-face {
+    font-family: lakeshor;
+    src: url("fonts/LAKESHOR-webfont.svg");
+    src: url("fonts/LAKESHOR-webfont.woff");
+   }
+
+
 body{
     display: flex;
     flex-direction: column;
-  background-color: lemonchiffon; /*common */
+    background-color: lemonchiffon; /*common */
+    margin: 0%;
     }
 .logo {
     display: block; 
-    font-size: 1.5rem; /* common title */
+    font-size: 2rem; /* common title */
     color: blueviolet;
     text-align: center;
     background-color: darkkhaki;
+    font-family: lakeshor;
+    white-space: pre;
+    
+    max-height: 25vh;
      }
 
 .main_class {}
@@ -61,7 +73,9 @@ font-size: 1.2em;
                   }
 
 .thumbnail-img {
-    width: 25vw; height: 20vw;
+    display: block;
+    width: 25vw; 
+    height: 20vw;
                }
 
 .thumbnail-title {
@@ -69,4 +83,5 @@ font-size: 1.2em;
     text-align: center;
     height: 5vw;
     color: blue;
-                 }
+    background-color: khaki;
+                     }

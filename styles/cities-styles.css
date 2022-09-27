@@ -25,7 +25,9 @@
     flex-direction: column;
     background-color: lemonchiffon; /*common */
     margin: 0; 
-    overflow: hidden; /* put away all scrolling: smtimes in big screen*/
+    /*overflow: hidden; */
+     /* put away all scrolling: smtimes in big screen*/
+     /* Yuri: Never use overflow: hidden in the element <body> */
           }
     .logo  {
     display: block; 
@@ -144,6 +146,9 @@ font-size: 3vh;
 
     @media (min-width:900px)
     {
+        .main-class {
+            height:90vh; /*detection height for delete vertical scrolling */
+        }
         .thumbnail-list {
         margin-top: 7vh;
                  

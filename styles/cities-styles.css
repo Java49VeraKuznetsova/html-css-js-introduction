@@ -137,6 +137,8 @@ font-size: 3vh;
             order: -1; /*location of list: left */
             justify-content: flex-start;
             margin-top: 8vh;
+            width: 20vw; /*new line from Vladimir:  */
+            /* put the spase between images and scrollbar */
                     }
     }
 

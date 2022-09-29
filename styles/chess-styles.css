@@ -1,0 +1,70 @@
+:root {
+    --cell-width: 10vw;
+    --cell-height: 10vw;
+}
+
+body, html { 
+  height: 100%; 
+           } 
+
+    body {
+        display: flex;
+        background-color: lightgoldenrodyellow;
+        align-items: center;
+        justify-content: center;
+        max-height: 98vh;
+           }
+    
+    .board {
+        display: flex;
+        flex-direction: column;
+        /* the following 2 parametres not important */
+        max-width: calc(cvar (--cell-width) * 8);
+        max-height: calc(var(--cell-height) * 8); 
+       
+    }
+
+    .board-row-w-b {
+        display: flex;
+        flex-direction: row;
+        max-width: calc(var(--cell-width) * 8);
+        max-height: var(--cell-height); 
+    }
+
+    .board-row-b-w {
+        display: flex;
+        flex-direction: row;
+        max-width: calc(var(--cell-width) * 8);
+        max-height: var(--cell-height); 
+    }
+
+    .cell-black {
+        display: block;
+        width: var(--cell-width);
+        height: var(--cell-height);
+        background-color: black;
+        border: solid 1px grey;
+            }
+
+    .cell-white {
+        display: block;
+        width: var(--cell-width);
+        height: var(--cell-height);
+        background-color: white;
+        border: solid 1px grey;
+    }
+
+    @media (min-width: 560px) {
+        :root {
+            --cell-width: 5vw;
+            --cell-height: 5vw;
+        }
+    body {
+        max-height: 96vh;
+    }
+    }
+ 
+    @media (min-width: 900px) {
+        /* northing to change */
+       
+    }

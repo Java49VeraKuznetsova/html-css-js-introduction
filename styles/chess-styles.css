@@ -1,7 +1,6 @@
 :root {
-    --cell-width: 10vw;
-    --cell-height: 10vw;
-    /* may be one variable */
+    --cell-side: 8vw;
+    
 }
 
 body, html { 
@@ -9,56 +8,66 @@ body, html {
            } 
 
     body {
-        display: flex;
-        background-color: lightgoldenrodyellow;
-        align-items: center;
-        justify-content: center;
-        max-height: 98vh;
+       /* only for visibility */
+        background-color: lightgoldenrodyellow; 
+       margin: 0;
            }
     
     .board {
-        display: flex;
-        flex-direction: column;
-        /* the following 2 parametres not important */
-        max-width: calc(cvar (--cell-width) * 8);
-        max-height: calc(var(--cell-height) * 8); 
-       
+        display: inline-block;
+        margin-left: 16vw;
+        margin-top: 31vh;
+        width: calc(var (--cell-side) * 8);
+        height: calc(var(--cell-side) * 8); 
+            
     }
 
       .board-row {
-        display: flex;
-        flex-direction: row;
-        max-width: calc(var(--cell-width) * 8);
-        max-height: var(--cell-height); 
-    }
+       
+       float: left; /* this function only for Block */
+       /* delete spase between columns */
+       
+          }
   /* border in cell: delete spase between cells */
     .cell-black {
         display: block;
-        width: var(--cell-width);
-        height: var(--cell-height);
+        width: var(--cell-side);
+        height: var(--cell-side);
         background-color: black;
-        border: solid 1px grey;
+       border: solid 1px grey;
             }
 
     .cell-white {
         display: block;
-        width: var(--cell-width);
-        height: var(--cell-height);
+        width: var(--cell-side);
+        height: var(--cell-side);
         background-color: white;
-        border: solid 1px grey;
+        border: solid 1px grey; 
     }
 
     @media (min-width: 560px) {
         :root {
-            --cell-width: 5vw;
-            --cell-height: 5vw;
+           
+            --cell-side: 5vw;
         }
     body {
         max-height: 96vh;
     }
+    .board {
+        margin-left: 28vw;
+        margin-top: 6vh;
+                  
+    }
     }
  
     @media (min-width: 900px) {
-        /* northing to change */
-       
+       /* this is trouble on big screen without deb. */
+        body {
+            height:98vh;
+        }
+        
+        .board {
+            margin-left: 29vw;
+            margin-top: 13vh;
+        }      
     }

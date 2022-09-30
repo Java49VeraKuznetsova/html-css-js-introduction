@@ -1,159 +1,192 @@
-@font-face { /*font for logo */
-    font-family: lakeshor; 
+@font-face {    /*font for logo */
+    font-family: lakeshor;
     src: url("fonts/LAKESHOR-webfont.svg");
     src: url("fonts/LAKESHOR-webfont.woff");
-   }
-   @font-face { /*font for item */
+}
+
+@font-face {    /*font for items and details */
     font-family: airstream;
     src: url("fonts/Airstream-webfont.svg");
     src: url("fonts/Airstream-webfont.woff");
-   }
+}
 
-  :root {
+:root {
     --thumbnails-img-width: 25vw;
     --thumbnails-img-height: 20vw;
-    --thumbnails-title-height: calc(var(--thumbnails-img-height)*0.33);  
-    
-         }
+    --thumbnails-title-height: calc(var(--thumbnails-img-height)*0.33);
+}
 
-   body, html {
+body,
+html {
     height: 100%;
-            } 
+}
 
-    body    {
+body {
     display: flex;
     flex-direction: column;
-    background-color: lemonchiffon; /*common */
-    margin: 0; 
+    background-color: lemonchiffon;    /*common */
+    margin: 0;
     /*overflow: hidden; */
-     /* put away all scrolling: smtimes in big screen*/
-     /* Yuri: Never use overflow: hidden in the element <body> */
-          }
-    .logo  {
-    display: block; 
-    font-size: 4vh; /* common title */
-    color: indigo;
+    /* put away all scrolling: smtimes in big screen*/
+    /* Yuri: Never use overflow: hidden in the element <body> */
+}
+
+.logo {
+    display: block;
+    font-size: 4vh;    /* common title */
+    color: darkslateblue;
     text-align: center;
-    line-height: 7vh; /*title - vertical centre */
+    line-height: 7vh;    /*title - vertical centre */
     background-color: darkkhaki;
-    font-family: lakeshor; /* new font*/
+    font-family: lakeshor;    /* new font*/
     /*text-transform: uppercase; - big letters*/
-      }
+}
 
-      .main-class {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        flex-grow: 1;
-                   }
-.details-container {
-    display: flex; 
-    flex-direction: column; 
-    align-items: center;
-    margin-bottom: 6vh;                   }
-.details-image {
-    width:80vw; height: 50vw;
-    border-radius: 25%;
-    border: solid 1.5px; color: chocolate;  
-               }
-
-               .details-title {
-    /* title Rovenna */
-    display: block; 
-    text-align: center;
-color: darkgoldenrod;
-font-size: 3vh; 
-             }
-
-.thumbnail-list {
-    /* common block with images */
-    list-style: none; /* non-numeration */
+.main-class {
     display: flex;
-    flex-direction: row; /* images in row */
-    flex-wrap: wrap;  /* on the next row */
-    max-height: 32.5vh; /*size of visual part */
-    overflow-y: auto; /* scroll vertical only small images 
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 6vh;
+   
+}
+/* not good */
+.details-frame { 
+  position: relative; 
+        }
+
+.details-image {
+    width: 80vw;
+    height: 50vw;
+    border-radius: 25%;
+    border: solid 1.5px;
+    color: chocolate;
+}
+
+.details-title {
+    /* title Rovenna */
+    display: block;
+    color: darkslateblue;
+    font-size: 5vh;
+    font-style: italic; font: bold;
+    font-family: airstream; 
+    position: relative; /*text on image */
+    left: 0vw; bottom: 8vw; /* plase of text */
+}
+
+.thumbnail-list {    /* common block with images */
+    list-style: none;    /* non-numeration */
+    display: flex;
+    flex-direction: row;     /* images in row */
+    flex-wrap: wrap;    /* on the next row */
+    max-height: 32.5vh;    /*size of visual part */
+    overflow-y: auto;    /* scroll vertical only small images 
             according max-height*/
-    justify-content: space-around; /* space between images*/
-    padding: 0; /* without left spase */
-                     }
+    justify-content: space-around;    /* space between images*/
+    padding: 0;    /* without left spase */
+}
 
 .thumbnail-item {
     display: flex;
     border: solid 1.2px blue;
     background-color: khaki;
-    margin-top: 2.8vh; /*space between rows*/
-    border-radius: 25%; /*oval image*/
-    overflow: hidden; /* without corner */
+    margin-top: 2.8vh;    /*space between rows*/
+    border-radius: 25%;     /*oval image*/
+    overflow: hidden;    /* without corner */
     max-width: var(--thumbnails-img-width);
     min-height: calc(var(--thumbnails-img-height) + var(--thumbnails-title-height));
-                }
+}
 
 .thumbnail-anchor {
     text-decoration: none;
-                  }
+}
 
 .thumbnail-img {
     display: block;
     width: var(--thumbnails-img-width);
     height: var(--thumbnails-img-height);
-               }
+}
 
 .thumbnail-title {
-    display: block; 
+    display: block;
     text-align: center;
     height: var(--thumbnails-title-height);
     color: blue;
     background-color: khaki;
-    font-family: airstream;  
+    font-family: airstream;
     font-size: 3vw;
-                     }
-    
-    @media (min-width:560px)
-    {
-        :root {
-            --thumbnails-img-width: 14vw;
-            --thumbnails-img-height: 11vw;
-            --thumbnails-title-height: calc(var(--thumbnails-img-height)*0.33);  
-            
-                 }
-        .main-class { /*change image location */
-            flex-direction: row;
-            justify-content: space-around;
-        }
-       .details-container {
-            margin-top: 15vh;
-            margin-right: 8vw;
-            }
-            .details-title 
-            {font-size: 5vh;}
-        .details-image {
-            width: 50vw;
-            height: 30vw;
-        }
-        .thumbnail-list {
-            flex-direction: column;
-            flex-wrap: nowrap; /*without several image in row */
-            max-width: 100vh;
-            max-height: 70vh;
-            order: -1; /*location of list: left */
-            justify-content: flex-start;
-            margin-top: 8vh;
-            width: 20vw; /*new line from Vladimir:  */
-            /* put the spase between images and scrollbar */
-                    }
+}
+
+.thumbnail-item:hover {
+    transform: scale(1.2);
+}
+
+@media (min-width:560px) {
+    :root {
+        --thumbnails-img-width: 14vw;
+        --thumbnails-img-height: 11vw;
+        --thumbnails-title-height: calc(var(--thumbnails-img-height)*0.33);
+
+    }
+    .logo {
+        font-size: 7vh;    /* common title */
+        line-height: 11vh;    /*title - vertical centre */
+          }
+    .main-class {
+        /*change image location */
+        flex-direction: row;
+        justify-content: space-around;
+        height: 89vh;   /*detection height for delete vertical scrolling */
     }
 
-    @media (min-width:900px)
-    {
-        .main-class {
-            height:90vh; /*detection height for delete vertical scrolling */
-        }
-        .thumbnail-list {
-        margin-top: 7vh;
-                 
-        }
-      .thumbnail-item {
-            margin-top: 7vh;
-        } 
+    .details-container {
+        margin-top: 15vh;
+        margin-right: 8vw;
     }
+
+    .details-title {
+        font-size: 10vh;
+        bottom: 4vw;
+                   }
+
+    .details-image {
+        width: 50vw;
+        height: 30vw;
+    }
+
+    .thumbnail-list {
+        flex-direction: column;
+        flex-wrap: nowrap;  /*without several image in row */
+        max-width: 100vh;
+        max-height: 70vh;
+        order: -1;        /*location of list: left */
+        justify-content: flex-start;
+        margin-top: 8vh;
+        width: 20vw; 
+        /*new line from Vladimir:  */
+        /* put the spase between images and scrollbar */
+
+    }
+
+    .thumbnail-item:hover {
+        margin-left: 2vw;
+        transform: scale(1.15);
+    }
+}
+
+@media (min-width:900px) {
+
+    .thumbnail-list {
+        margin-top: 7vh;
+
+    }
+    .thumbnail-item {
+        margin-top: 7vh;
+    }
+}

@@ -1,6 +1,7 @@
 :root {
     --cell-width: 10vw;
     --cell-height: 10vw;
+    /* may be one variable */
 }
 
 body, html { 
@@ -24,20 +25,13 @@ body, html {
        
     }
 
-    .board-row-w-b {
+      .board-row {
         display: flex;
         flex-direction: row;
         max-width: calc(var(--cell-width) * 8);
         max-height: var(--cell-height); 
     }
-
-    .board-row-b-w {
-        display: flex;
-        flex-direction: row;
-        max-width: calc(var(--cell-width) * 8);
-        max-height: var(--cell-height); 
-    }
-
+  /* border in cell: delete spase between cells */
     .cell-black {
         display: block;
         width: var(--cell-width);

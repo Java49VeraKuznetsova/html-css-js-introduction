@@ -25,10 +25,8 @@ body {
     display: flex;
     flex-direction: column;
     background-color: lemonchiffon;    /*common */
-    margin: 0;
-    /*overflow: hidden; */
-    /* put away all scrolling: smtimes in big screen*/
-    /* Yuri: Never use overflow: hidden in the element <body> */
+    margin: 0;  /* put away all scrolling: smtimes in big screen*/
+    /*overflow: hidden; */    /* Yuri: Never use overflow: hidden in the element <body> */
 }
 
 .logo {
@@ -53,7 +51,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 6vh;
+   /*justify-content: center: not in center*/
+   margin-bottom: 6vh; 
    
 }
 /* not good */
@@ -67,17 +66,18 @@ body {
     border-radius: 25%;
     border: solid 1.5px;
     color: chocolate;
-}
+    }
 
 .details-title {
-    /* title Rovenna */
+
     display: block;
-    color: darkslateblue;
-    font-size: 5vh;
+    color: blue;
+    background-color: khaki;
+    font-size: 3vh;
     font-style: italic; font: bold;
     font-family: airstream; 
-    position: relative; /*text on image */
-    left: 0vw; bottom: 8vw; /* plase of text */
+    position: absolute; /*text on image */
+    left: -2vw; bottom: 2vh; /* plase of text */
 }
 
 .thumbnail-list {    /* common block with images */
@@ -94,7 +94,7 @@ body {
 
 .thumbnail-item {
     display: flex;
-    border: solid 1.2px blue;
+    border: solid 1.2px chocolate;
     background-color: khaki;
     margin-top: 2.8vh;    /*space between rows*/
     border-radius: 25%;     /*oval image*/
@@ -138,20 +138,25 @@ body {
         font-size: 7vh;    /* common title */
         line-height: 11vh;    /*title - vertical centre */
           }
-    .main-class {
-        /*change image location */
-        flex-direction: row;
-        justify-content: space-around;
-        height: 89vh;   /*detection height for delete vertical scrolling */
-    }
+   
+          .main-class {
+            /*change image location */
+            flex-direction: row;
+            justify-content: space-around;
+            /*height: 89vh;   not important here because of margin:0 in body
+            detection height for delete vertical scrolling */
+        }
 
     .details-container {
-        margin-top: 15vh;
-        margin-right: 8vw;
+       margin-top: 15vh;
+        margin-right: 8vw; 
+       /* not in center of screen becouse of width of the list
+       justify-content: center;
+        align-items: center; */
     }
 
     .details-title {
-        font-size: 10vh;
+        font-size: 6vh;
         bottom: 4vw;
                    }
 
@@ -181,7 +186,15 @@ body {
 }
 
 @media (min-width:900px) {
-
+    .main-class {
+        height: 89vh;  
+        /*detection height for delete vertical scrolling */
+    }
+    .details-container {
+        margin-top: 10vh; /*good for big screen without debagger
+        margin-top: 15vh; - with debagger */
+        
+    }
     .thumbnail-list {
         margin-top: 7vh;
 

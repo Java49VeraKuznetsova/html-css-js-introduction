@@ -12,15 +12,24 @@
       Cities and Countries
    </header>
 
-      <main class="main-class">
+      <main class="main-class hidden">
          <section class="details-container">
              <div class="details-frame"> 
+               <button class="hide-button" onclick="hideDetails()">Close</button>
              <img src="images/Moscow.jpg" class="details-image">
              <span class="details-title">M o s c o w</span>
             </div>
             </section>
       <ul class="thumbnail-list">
-               
+         <li class="thumbnail-item">
+            <a href="#" class="thumbnail-anchor" 
+            data-details-image="images/Moscow.jpg"
+            data-details-title="Big Clay No4"> 
+               <img src="images/Moscow.jpg" class="thumbnail-img">
+               <span class="thumbnail-title">Moscow</span>
+            </a>
+          </li>
+
           <li class="thumbnail-item">
             <a href="#" class="thumbnail-anchor" 
             data-details-image="images/Sicily.jpg"

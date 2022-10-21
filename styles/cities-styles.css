@@ -47,6 +47,10 @@ body {
     flex-grow: 1;
 }
 
+.main-class.hidden { 
+    --thumbnails-img-width: 35vw;
+    --thumbnails-img-height: 25vw;
+}
 .details-container {
     display: flex;
     flex-direction: column;
@@ -55,10 +59,22 @@ body {
    margin-bottom: 6vh; 
    
 }
+
+.hidden .details-container {
+    display: none;
+}
 /* not good */
 .details-frame { 
   position: relative; 
         }
+
+.hide-button {
+    position: absolute;
+    top: 2vh;
+    right: 2vw;
+    font-style: italic;
+    font-weight: bold;
+}
 
 .details-image {
     width: 80vw;
@@ -92,6 +108,11 @@ body {
     padding: 0;    /* without left spase */
 }
 
+.hidden .thumbnail-list  {
+    max-height: 80vh;
+    /*  Not need:  margin-bottom: 10vh; */
+}
+
 .thumbnail-item {
     display: flex;
     border: solid 1.2px chocolate;
@@ -102,6 +123,7 @@ body {
     max-width: var(--thumbnails-img-width);
     min-height: calc(var(--thumbnails-img-height) + var(--thumbnails-title-height));
 }
+
 
 .thumbnail-anchor {
     text-decoration: none;
@@ -123,6 +145,11 @@ body {
     font-size: 3vw;
 }
 
+.hidden .thumbnail-title {
+    font-size: 5vw;
+    padding-top: 1vh; 
+    
+}
 .thumbnail-item:hover {
     transform: scale(1.2);
 }
@@ -168,8 +195,9 @@ body {
     .thumbnail-list {
         flex-direction: column;
         flex-wrap: nowrap;  /*without several image in row */
-        max-width: 100vh;
-        max-height: 70vh;
+        max-width: 100vh; 
+        max-height: 65vh;
+         /*max-height: 70vh;*/
         order: -1;        /*location of list: left */
         justify-content: flex-start;
         margin-top: 8vh;
@@ -187,7 +215,7 @@ body {
 
 @media (min-width:900px) {
     .main-class {
-        height: 89vh;  
+       /* height: 89vh;  */
         /*detection height for delete vertical scrolling */
     }
     .details-container {

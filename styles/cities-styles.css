@@ -59,7 +59,7 @@ body {
    margin-bottom: 6vh; 
    /* increase: time 7 sec, 0.2 from all time increase double (2), 
    0.8 from all time decrease to normal (1) */
-   transition: 7s cubic-bezier(0.2, 2, 0.8, 1); 
+   transition: 10s cubic-bezier(0.2, 2, 0.8, 1); 
   
    }
 

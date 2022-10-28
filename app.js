@@ -1,7 +1,7 @@
 
 console.log ("SumDigits");
 
-let number = -439;
+let number = -4591;
 let sum = SumDigits (number);
 console.log (sum);
 
@@ -14,6 +14,10 @@ function SumDigits (number)
     number = -number;
    }
        do {
+         /* V.R. The same,  but a little bit easier
+        sum += number % 10;
+        number = Math.floor (number/10);
+        */
         rem = number % 10;
         sum = sum + rem;
         number = number/10;

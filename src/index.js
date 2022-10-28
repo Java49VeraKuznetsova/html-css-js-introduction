@@ -25,8 +25,9 @@ function setDetails(anchor) {
 
 for (let i=0; i<anchors.length; i++) {
     anchors[i].addEventListener("click", function() {
-        showDetails ();
         setDetails(anchors[i]);
+        showDetails ();
+        
            })
 }
 

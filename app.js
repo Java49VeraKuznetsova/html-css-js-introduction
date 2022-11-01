@@ -31,7 +31,7 @@ function fromNumberToString (number, base)
       
    do{
     let digit = number % base;
-    if (digit >= 0 && digit <= 1) /* 10 -> ASKII, numbers */
+    if (digit >= 0 && digit <= 9) /* 10 -> ASKII, numbers */
     {
       digit += 48;
     }

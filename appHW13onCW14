@@ -1,0 +1,60 @@
+// Homework 13 on Classwork 14
+function checkTeudatZeut (teudatStrNumber){
+    let res = false; 
+    // !!Sic, word lenght not found
+    if (teudatStrNumber.length == 9 && isNaN(teudatStrNumber)) {
+        let arrayForSum = getArrayForSum(teudatStrNumber);
+        let sum = getSum(arrayForSum);
+       // return sum % 10 == 0;
+       res = sum % 10 == 0;
+    }
+    return res;
+}
+
+
+function getArrayForSum(teudatStrNumber)
+{
+    let array = Array.from(teudatStrNumber);
+   /* from one Array to another
+   let res = [];
+    for(let i = 0; i < array.length; i++)
+    {
+        res[i] = getCurrentNumber(array[i], i);
+    }
+    return res; */
+    return array.map(getCurrentNumber);
+}
+
+function getCurrentNumber (element, index)
+{
+    return index % 2 == 0 ? +element : getNumberOddIndex(element);
+}
+
+function getNumberOddIndex (element)
+{
+    let res = element*2;
+    if(res>9) {
+        res -=9;
+    }
+return res;
+}
+
+function getSum(array) {
+    /*let res = 0;
+    for (let i = 0; i < array.length; i++)
+    {
+        res += array[i];
+    }
+    return res;
+  */
+ return array.reduce(function(res, cur){
+  return res + cur;
+ }, 0)
+}
+
+let numbers = ['123456782', '1234', 'abcd123', '123456783']
+numbers.forEach(function(e) {
+    console.log(`teudat zehut: ${e},
+    return of the method checkTeudatZehut:
+    ${checkTeudatZeut(e)}`)
+});

@@ -35,12 +35,14 @@ function ulSurround (strings)
 {
    // add to each element new symbols, new massiv
    let array = strings.map (function(e) { 
-        return '<li>' + e + '<li>';
+           // V.R. </li>, not <li>
+      return '<li>' + e + '</li>';
     });
     // add new elements to the beginning
     array.splice (0, 0, "<ul>" );
     // add new elements to the end
-    array.splice (array.length, 0, "<ul>");
+         // V.R. </ul>, not <ul>
+    array.splice (array.length, 0, "</ul>");
     //.splice return deleted elements
     return array;
 }
@@ -65,7 +67,9 @@ function arrayCopy (src, srcPos, dst, dstPos, length)
    // took element from array (forEach) and put into dst (splice)
    array.forEach (function(symbol, index) {
       dst.splice(dstPos+index,0,symbol);})
-   return dst;
+       // V.R. return isn't obligatory because splice changes the array
+   // Vera: try to comment, return undefined
+       return dst;
 }
 
 
@@ -81,5 +85,6 @@ function move (array, index, offset)
    // put the element for new place
    array.splice (index+offset, 0, el);
    //.splice return deleted elements
+    // V.R. return isn't obligatory because splice changes the array
    return array;
 }

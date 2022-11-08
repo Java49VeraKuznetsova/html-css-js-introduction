@@ -6,31 +6,43 @@ let arD = [10, 20, 30, 40, 50, 60, 70];
 let copy, index, offset, element;
 let ulSurrounding; 
 
+//Task 1
+console.log ("Task 1");
 console.log ("ulSurrounding:", ulSurrounding = ulSurround(strings));
 
+//Task 2
+console.log ("Task 2");
 element = "abc";
 console.log ("strings:", strings, "element = ", element, "result =", count(strings,element));
 
 element = "ab";
 console.log ("strings:", strings, "element = ", element, "result =", count(strings,element));
 
+//Task 3
+console.log ("Task 3");
 console.log ("arD:", arrayCopy(numbers, 3, arD, 4, 3));
 
+//Task 4
+console.log ("Task 4");
 copy = numbers.slice(), index = 2, offset = 4;
 console.log ("move:", numbers, "index =", index, "offset =", offset, "result:",  move(copy, index, offset));
 
 copy = numbers.slice(), index = 3, offset = -1;
 console.log ("move:", numbers, "index =", index, "offset =", offset, "result:",  move(copy, index, offset));
 
+
 // Task 1
 function ulSurround (strings)
 {
+   // add to each element new symbols, new massiv
    let array = strings.map (function(e) { 
         return '<li>' + e + '<li>';
     });
+    // add new elements to the beginning
     array.splice (0, 0, "<ul>" );
+    // add new elements to the end
     array.splice (array.length, 0, "<ul>");
-    //!! not return array.splice
+    //.splice return deleted elements
     return array;
 }
 
@@ -38,34 +50,37 @@ function ulSurround (strings)
 
 function count (strings, element)
 {
-   return strings.reduce (function(res, symbol){
+   // if element of array == symbol, count++
+   return strings.reduce (function(count, symbol){
       if (symbol == element) 
-                    res++; 
-      return res;
+                    count++; 
+     return count;
   },0);
 }
 
 //Task 3
 
 function arrayCopy (src, srcPos, dst, dstPos, length)
-{  // 2 string of code: not correct. Why slice don't work??
-   let array = src.slice(srcPos);
-   array.splice (length, src.length-length);
-   for (let i = 0; i<length; i++)
-   {
-    dst.splice(dstPos+i,0,array[i]);
-   }
+{  // create new array - as a part of source array
+   let array = src.slice(srcPos, srcPos+length);
+   // took element from array (forEach) and put into dst (splice)
+   array.forEach (function(symbol, index) {
+      dst.splice(dstPos+index,0,symbol);})
    return dst;
 }
+
 
 //Task 4
 
 function move (array, index, offset)
 {
-   //let ar = array.splice (index, 1, array[index], index+offset);
+
    let el = array[index];
+   // 2 function splice, because of delete from one place and put into another
+   // delete element from the old place
    array.splice (index, 1);
+   // put the element for new place
    array.splice (index+offset, 0, el);
-   // see ? in task 1 - return
+   //.splice return deleted elements
    return array;
 }

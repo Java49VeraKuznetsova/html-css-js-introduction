@@ -1,90 +1,65 @@
-console.log ("Homework 14");
+console.log ("Howework 15");
 
-let strings = ["abc", "lmn", "cd","abc","abc"];
-let numbers = [1, 2, 3, 4, 5, 6, 7];
-let arD = [10, 20, 30, 40, 50, 60, 70];
-let copy, index, offset, element;
-let ulSurrounding; 
+// Task 1 
+let arMinMax = [1, 2, 3, 4, 5, 7,4, 1, -5];
+//array for checking
+let arMinMax1 = [1, 2, 3, 4, 5, "a",4, 1, -5];
+//first print without [], with imp.string with checking array
+checkArNumbers (arMinMax) > 0 ? console.log (`Error: array ${arMinMax} not a number`) :
+        console.log (`1. array Min- Max: ${arMinMax}, result: ${MinMax(arMinMax)}`);
+// incorect array
+        checkArNumbers (arMinMax1) > 0 ? console.log (`Error: array ${arMinMax1}: not a number`) :
+        console.log (`1. array Min- Max: ${arMinMax1}, result: ${MinMax(arMinMax1)}`);
+        
+//second print with [], without imp.string with checking array
+checkArNumbers (arMinMax) > 0 ? console.log (`Error: array ${arMinMax} not a number`) :
+        console.log ("2. array Min- Max: ", arMinMax, ",  result: ", MinMax(arMinMax));
 
-//Task 1
-console.log ("Task 1");
-console.log ("ulSurrounding:", ulSurrounding = ulSurround(strings));
-
-//Task 2
-console.log ("Task 2");
-element = "abc";
-console.log ("strings:", strings, "element = ", element, "result =", count(strings,element));
-
-element = "ab";
-console.log ("strings:", strings, "element = ", element, "result =", count(strings,element));
-
-//Task 3
-console.log ("Task 3");
-console.log ("arD:", arrayCopy(numbers, 3, arD, 4, 3));
-
-//Task 4
-console.log ("Task 4");
-copy = numbers.slice(), index = 2, offset = 4;
-console.log ("move:", numbers, "index =", index, "offset =", offset, "result:",  move(copy, index, offset));
-
-copy = numbers.slice(), index = 3, offset = -1;
-console.log ("move:", numbers, "index =", index, "offset =", offset, "result:",  move(copy, index, offset));
-
-// Task 1
-function ulSurround (strings)
-{
-   // add to each element new symbols, new massiv
-   let array = strings.map (function(e) { 
-           // V.R. </li>, not <li>
-      return '<li>' + e + '</li>';
-    });
-    // add new elements to the beginning
-    array.splice (0, 0, "<ul>" );
-    // add new elements to the end
-         // V.R. </ul>, not <ul>
-    array.splice (array.length, 0, "</ul>");
-    //.splice return deleted elements
-    return array;
+function MinMax(arMinMax) {
+ let array = [];
+ arMinMax.reduce ((res,e) =>
+            {res > e ? (res = e, array[0] = e) : res;
+             res < e ? (res = e, array[1] = e) : res;   
+             return res;  })
+     
+return array;
 }
 
-//Task 2
+// Task 2
+let arPrefix = ['abc', 'old_abc', 'lmn', '123', 'old_lmn', 'lmn_old'];
+let prefix = "old_";
+console.log ("1. Sourse array: ", arPrefix, "prefix: ", prefix, " result: ", deleteWithPrefix(arPrefix, prefix));
+// Printing not correct, because of not [] in array
+//console.log (`2. Sourse array:  ${arPrefix} prefix:  ${prefix} result: ${deleteWithPrefix(arPrefix, prefix)}`);
 
-function count (strings, element)
-{
-   // if element of array == symbol, count++
-   return strings.reduce (function(count, symbol){
-      if (symbol == element) 
-                    count++; 
-     return count;
-  },0);
+function deleteWithPrefix (strings, prefix) {
+        // return initial array with changes. Don't work without return
+return strings.filter ((e) => e.startsWith(prefix) == false, prefix);
 }
 
 //Task 3
+let numbers = [1,6,3,8,5,2,7,4];
+checkArNumbers (numbers) > 0 ? console.log (`Error: array ${numbers} not a number`) :
+       console.log ("1. Array numbers: ", numbers, "array after sort: ", getSortedEvenOdd(numbers));
+// Printing not correct, because of not [] in array
+       /* checkArNumbers (numbers) > 0 ? console.log (`Error: array ${numbers} not a number`) :       
+console.log (`2. Array numbers:  ${numbers}  array after sort:  ${getSortedEvenOdd(numbers)}`);
+*/
 
-function arrayCopy (src, srcPos, dst, dstPos, length)
-{  // create new array - as a part of source array
-   let array = src.slice(srcPos, srcPos+length);
-   // took element from array (forEach) and put into dst (splice)
-   array.forEach (function(symbol, index) {
-      dst.splice(dstPos+index,0,symbol);})
-       // V.R. return isn't obligatory because splice changes the array
-   // Vera: try to comment, return undefined
-       return dst;
+function getSortedEvenOdd (numbers){
+    let numbersNew;
+    arEven = numbers.filter (e => e % 2 == 0);
+    arOdd = numbers.filter (e => e % 2 != 0);
+    arEven.sort ((a,b) => a-b);
+    arOdd.sort ((a,b) => b-a);
+    return numbersNew = arEven.concat(arOdd);
 }
 
 
-//Task 4
-
-function move (array, index, offset)
-{
-
-   let el = array[index];
-   // 2 function splice, because of delete from one place and put into another
-   // delete element from the old place
-   array.splice (index, 1);
-   // put the element for new place
-   array.splice (index+offset, 0, el);
-   //.splice return deleted elements
-    // V.R. return isn't obligatory because splice changes the array
-   return array;
+// checking array of numbers
+function checkArNumbers (array) {
+ 
+return array.reduce ((res,el) => typeof(el) != "number" ? res+1 : res, 0);
+   
 }
+

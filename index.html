@@ -8,7 +8,10 @@
     <link rel="stylesheet" href="styles/wordle.css">
 </head>
 <body>
+    <label> Put the world
     <input type="text" onchange="onChange(event)">
+  </label>
+        
     <section class="word-guess">
       <div class="letter-guess"></div>
       <div class="letter-guess"></div>
@@ -16,6 +19,12 @@
       <div class="letter-guess"></div>
       <div class="letter-guess"></div>
     </section>
+
+    <section class="answer"></section>
+    <label>
+     <div id='infoLebel'>  </div>
+     <div class = "info-label"></div> 
+  </label>
     <script src="src/wordle.js"></script>
 </body>
 </html>

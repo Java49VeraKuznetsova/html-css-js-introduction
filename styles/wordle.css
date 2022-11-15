@@ -3,6 +3,14 @@ display: flex;
 flex-direction: column;
 align-items: center;
 }
+.answer 
+{
+    display: flex;
+    flex-direction: row;
+    /*font-style: italic;
+   */
+}
+    
 .word-guess {
     display: flex;
     flex-direction: row;
@@ -12,6 +20,15 @@ align-items: center;
     margin-left: 2vw;
     background-color: beige;
 }
+.info-label {
+    display:flex;
+    font-size: 3em;
+  /*font-style: italic;
+  */
+    
+}
+
+
 /*
 .red {
     color: red;

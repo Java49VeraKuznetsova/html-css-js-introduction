@@ -5,26 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles/wordle.css">
+    <link rel="stylesheet" href="styles/marvels.css">
 </head>
 <body>
-    <label> Put the world
-    <input type="text" onchange="onChange(event)">
-  </label>
-        
-    <section class="word-guess">
-      <div class="letter-guess"></div>
-      <div class="letter-guess"></div>
-      <div class="letter-guess"></div>
-      <div class="letter-guess"></div>
-      <div class="letter-guess"></div>
-    </section>
+    <p class="check" Start></p>
+    <p class="question"></p>
+    
+    <label> Input word, then press Enter:
+        <input type="text" onchange="onChange(event)">
+    
+        <section class="word-guess">
 
-    <section class="answer"></section>
-    <label>
-     <div id='infoLebel'>  </div>
-     <div class = "info-label"></div> 
-  </label>
-    <script src="src/wordle.js"></script>
+        </section>
+    </label>
+     <p class="game-over-message"></p>
+     <button id="play-again" onclick="startGame()">Play again</button>
+     <button id="stop-play" onclick="checkEnd(true)">Stop game</button>
+    <script src="src/marvels.js"></script>
 </body>
 </html>

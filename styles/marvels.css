@@ -12,6 +12,7 @@ body {
 .word-guess {
     display: flex;
     flex-direction: row;
+    text-align: center;
 }
 
 .letter-guess {
@@ -21,5 +22,6 @@ body {
     width: 3.5vw;
     text-align: center;
 }
+
 
 

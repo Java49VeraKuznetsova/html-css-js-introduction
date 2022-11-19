@@ -30,23 +30,20 @@ const colors = wordFieldAr.map((l, i) =>
 );
 colorsOld = colors;
 colors.forEach((c, i) => 
-       letterElements[i].style.background = c);
+                letterElements[i].style.background = c);
 if (colors.includes('black') == false)
-             endGame(wordAr); 
+                     endGame(wordAr); 
 }
 
 
 function startGame ()
 {
   gameOverElement.innerHTML = '';
-   
-
-   do {
+     do {
     index = Math.floor(Math.random() * words.length);
     console.log ("word" , words[index][1]);
-
-} while (indexPrev == index);
-indexPrev = index;
+        } while (indexPrev == index);
+  indexPrev = index;
 
    sectionElement.innerHTML = getDivsElements();
    letterElements = document.querySelectorAll(".letter-guess");
@@ -76,7 +73,7 @@ if (flGameOver) {
    sectionElement.innerHTML = '';
    questionElement.innerHTML = '';
    gameOverElement.innerHTML = 'Whaiting you once more';
-    return;
+   return;
 }
 }
 

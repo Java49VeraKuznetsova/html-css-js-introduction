@@ -1,56 +1,61 @@
 
-/*
-const person = {id: 123, first_name: 'Vasya',
-last_name: 'Ivanov', year: 2000,
-address:{city: 'Lod', street: 'Skplov', app: 100}
-};
-console.log(person.year);
-const yearExp = "ye" + "ar";
-console.log (person[yearExp]);
-const personArr = [123, 'Vasya', 'Ivanov', 2000, ['Lod', 'Skplov', 100]];
-console.log (personArr[3]);
-const name1 = 'first_name';
-console.log(person[name1]);
-const name2 = getAddressKey();
-console.log(person.address[name2]);
-console.log(person.address);
+const str1 = "yellow";
+const stringsAr = ['weLoly','leloyw','wolley', 'weloyl',
+             'weloll', 'leloy', 'wollet', 'weloyo', 'yelloww', 'YELLOW'];
 
-function getAddressKey ()
-{
-    return "app";
+
+
+stringsAr.forEach((e, i) => { isAnagram (str1, stringsAr[i]) == true ? 
+                    console.log (`"${stringsAr[i]}" is Anagram of "${str1}"`) :
+                    console.log (`"${stringsAr[i]}" isn't Anagram of "${str1}"`); 
+                });
+
+function isAnagram (str1, str2) {
+let res = true; 
+if (str1.lenght != str2.lenght)
+{ return res = false;
+}
+else {
+    
+    const str1ArrayObject = str1Treatment(str1);
+
+const str1Object = {};
+//console.log (str1, str2);
+
+const str1Array = Array.from (str1.toLowerCase());
+
+const str2Array = Array.from (str2.toLowerCase());
+
+
+
+str1Array.forEach (element => {
+
+  
+    str1Object[element] == true ? str1Object[element]++ : str1Object[element]=1;
+
+    });
+
+    const str1ArrayObject = Object.entries(str1Object);
+
+
+str2Array.forEach (el2 => {
+              str1ArrayObject.forEach (el1 => {
+           // el2 == el1[0] ? el1--;
+            if (el1[0] == el2) el1[1]-- ;
+            
+          });
+        });
+       
+      res = true;
+       str1ArrayObject.forEach (el1 => {
+       // if (el1[1] == 1) res = false;
+       if (el1[1] != 0) res = false;
+       });
+       console.log (res);
+   return res;
+}
 }
 
-*/
-
-function displayOccurences (strings) {
-    const occurences = {};
-    strings.forEach(element => {
-        if (occurences[element]){
-            occurences[element]++;
-        }  else {
-            occurences[element] = 1;
-        }
-       // console.log(occurences);
-
-    })
-   //console.log(Object.entries(occurences));
-    const occurencesAr= Object.entries(occurences);
-    occurencesAr.sort((e1, e2) => e2[1] - e1[1]);
-    console.log(occurencesAr);
+function str1Treatment (str1) {
+    
 }
-
-const strings = ['a', 'opr','lmn', 'abc', 'lmn', 'lmn', 'abc', 'a'];
-displayOccurences (strings);
-
-
-
-const strings1 = ['a'];
-/*
-const x = {};
-const string = "abc";
-x[string] = 1;
-
-console.log (x);
-x[string]++
-console.log (x);
-*/

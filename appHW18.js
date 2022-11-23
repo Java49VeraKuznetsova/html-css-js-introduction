@@ -54,3 +54,4 @@ function str2Treatment (str2) {
   // word for test: string --> array with only Lower Case letters
     return Array.from (str2.toLowerCase());
 }
+

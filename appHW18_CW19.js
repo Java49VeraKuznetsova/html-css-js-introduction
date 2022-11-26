@@ -32,9 +32,18 @@ function symbolProcessing (res, cur) {
 }
 
 function checkAnagram (occurences, string) {
-    
-    return stringArray = Array.from(string);
-   }
+    const stringArray = Array.from(string);
+   
+    return stringArray.every(symbol => {
+        let res = false;
+        if (occurrences[symbol]) {
+            res = true;
+            occurrences[symbol]--
+        }
+        return res;
 
-   isAnagram("yellow", 'wolley')
-//const result = getSymbolOccurences ("yellow")
+    })
+
+}
+   isAnagram("yellow", 'wolley');
+// const result = getSymbolOccurences ("yellow")

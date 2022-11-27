@@ -4,7 +4,7 @@ const minBirthYear = 1940;
 const maxBirthYear = 2020;
 const minSalary = 1000;
 const maxSalary = 10000;
-
+// V.R. It bis better to declare this array inside the function createRandomEmployees()
 let employees = [];
 
 //Task 1
@@ -38,7 +38,7 @@ console.log ("Task4, increase salary", emploeeysIncSalary);
 // Task 1
    function createRandomEmployees 
 (nEmployees, idDigits, minBirthYear, maxBirthYear, minSalary, maxSalary) {
-  
+    // V.R. It is the good place to declare array of employees.
     let accID = [];
     let id;
     let minID = Math.pow(10, idDigits-1);
@@ -72,6 +72,7 @@ function createEmployees (id, name, birhtYear, salary) {
 }
 
 //Task 2
+// V.R. OK
 function getAverageAge (employees) {
       curYear = new Date ().getFullYear();
       let res =  employees.reduce((count, el, i) => {
@@ -83,6 +84,7 @@ function getAverageAge (employees) {
 }
 
 // Task 3
+// V.R. OK
 function getEmploeeysBySalary (employees,salaryFrom, salaryTo) {
 
 return employees.filter (el =>  el.salary >= salaryFrom && el.salary <= salaryTo). 
@@ -94,7 +96,11 @@ function increaseSalary1 (employees, borderSalary, percent) {
     return employees.map (el => {
         if (el.salary < borderSalary)
            el.salary += el.salary*percent/100;
-       return employees;
+             /* V.R. This map creates the array of arrays, not the array of employees
+           with updated salary. The following will do it:
+           return el;
+           */
+       return el;
     });
 }
 
@@ -104,7 +110,12 @@ function increaseSalary2 (employees, borderSalary, percent) {
     return emploeeysIncSalary.map (el => {
         if (el.salary < borderSalary)
            el.salary += el.salary*percent/100;
-       return emploeeysIncSalary;
+            /* V.R. This map creates the array of arrays, not the array of employees
+           with updated salary. The following will do it:
+           return el;
+           */
+      // return emploeeysIncSalary;
+      return el;
     });  
 
 }

@@ -1,0 +1,41 @@
+body,
+html {
+    height: 100%;
+}
+
+body {
+   
+    margin: 0;
+   
+}
+
+.logo {
+    display: flex;
+    /*
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto; */
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+.movies-list
+{
+   position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    list-style: none;
+    justify-content: space-around;
+   
+}
+.movie-image {
+    width: 30vw;
+    height: 30vw;
+    float: left;
+}
+
+.movie-desr {
+    margin-left: 110px ;
+}

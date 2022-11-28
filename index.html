@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/movies.css">
+    <title>Movies</title>
+</head>
+<body>
+   <header class="'logo"> 
+ 
+    <button onclick="show(0)">show section 1</button>
+    <button onclick="show(1)">show section 2</button>
+    <button onclick="show(2)">show section 3</button>
+   </header>
+       
+        <section hidden>
+            <ul class="movies-list">
+    
+            </ul>
+    
+        </section>
+        <section hidden>
+            <label>Kukureku</label>
+            <ul class="movies-list-pop"></ul>
+    
+        </section>
+        <section hidden>
+            <label>section 3</label>
+            <ul class="movies-list-npop"></ul>
+    
+        </section>
+       
+        
+        <script src="src/movies.js"></script>
+</body>
+</html>

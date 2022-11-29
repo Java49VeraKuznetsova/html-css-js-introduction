@@ -37,7 +37,7 @@ if (movie.popularity < curMovie.popularity)
 
 function getLeastPopularMovies () {
 let ind = 0;
-const index = moviesData.results.reduce ((movie, curMovie, index) => {
+const res = moviesData.results.reduce ((movie, curMovie, index) => {
 if (movie.popularity > curMovie.popularity)
     ind = index; 
     return movie;

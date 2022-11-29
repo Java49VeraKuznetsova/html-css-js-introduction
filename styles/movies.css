@@ -4,38 +4,77 @@ html {
 }
 
 body {
-   
+   display: flex;
+   flex-direction: column;
     margin: 0;
    
 }
 
 .logo {
-    display: flex;
-    /*
+    display: block;
     text-align: center;
-    margin-right: auto;
-    margin-left: auto; */
-    flex-direction: row;
-    align-items: center;
+    margin-top: 2.5vh;
+    margin-left: 4vw;
     
 }
 
-.movies-list
-{
-   position: relative;
+.main-class {
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
-    list-style: none;
-    justify-content: space-around;
+    justify-content: center;
    
 }
-.movie-image {
-    width: 30vw;
-    height: 30vw;
-    float: left;
+.movies-list
+{
+    
+ display: flex;
+ flex-direction: column;
+ overflow-y: auto; 
+ list-style: none;
+ max-width: 100vw;
+ max-height:89vh;
+ justify-content: space-between;
+ align-items: flex-start;
+ margin-top: 5vh;
+ padding-right: 10vw;
+   
 }
+.movie-item {
+    position: relative;
+    align-content: space-between;
+    margin-top: 0;
+}
+.movie-image {
+   display: block;
+    float:left;
+    width: 25vw;
+    height: 40vw;
+    margin-top: 5vh;
+  }
+
+.movie-title {
+    font-style: bold;
+    font-size: 3vh;
+  margin-left: 35vw;
+ }
 
 .movie-desr {
-    margin-left: 110px ;
+  margin-bottom: 0%;
+    margin-left: 35vw;
+    flex-grow: 2;
+}
+
+.movies-list-pop {
+    position: relative;
+    display: flex;
+    list-style: none;
+    margin-right: 5vw;
+}
+
+
+.movies-list-least {
+    list-style: none;  
+    position: relative;
+    display: flex;
+    margin-right: 5vw;  
 }

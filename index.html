@@ -8,31 +8,33 @@
     <title>Movies</title>
 </head>
 <body>
-   <header class="'logo"> 
+   <header class="logo"> 
  
-    <button onclick="show(0)">show section 1</button>
-    <button onclick="show(1)">show section 2</button>
-    <button onclick="show(2)">show section 3</button>
+    <button onclick="show(0)">All movies</button>
+    <button onclick="show(1)">Must popular</button>
+    <button onclick="show(2)">Least popular</button>
    </header>
-       
+       <main class="main-class">
         <section hidden>
             <ul class="movies-list">
     
             </ul>
     
         </section>
-        <section hidden>
-            <label>Kukureku</label>
+        <section hidden><center>
+            <label>Most Popular Movie</label>
+        </center>
             <ul class="movies-list-pop"></ul>
     
         </section>
         <section hidden>
-            <label>section 3</label>
-            <ul class="movies-list-npop"></ul>
+            <center>
+            <label>Least Popular Movie</label> </center>
+            <ul class="movies-list-least"></ul>
     
         </section>
        
-        
+    </main>
         <script src="src/movies.js"></script>
 </body>
 </html>

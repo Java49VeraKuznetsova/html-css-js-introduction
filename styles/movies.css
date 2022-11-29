@@ -26,7 +26,7 @@ body {
 }
 .movies-list
 {
-    
+
  display: flex;
  flex-direction: column;
  overflow-y: auto; 
@@ -48,20 +48,22 @@ body {
    display: block;
     float:left;
     width: 25vw;
-    height: 40vw;
-    margin-top: 5vh;
+    height: 30vw;
+    margin-top: 5vh; 
   }
 
 .movie-title {
     font-style: bold;
-    font-size: 3vh;
+    font-size: 4vh;
   margin-left: 35vw;
+  margin-top: 5vh; 
  }
 
 .movie-desr {
   margin-bottom: 0%;
     margin-left: 35vw;
     flex-grow: 2;
+    margin-top: 5vh; 
 }
 
 .movies-list-pop {
@@ -69,6 +71,8 @@ body {
     display: flex;
     list-style: none;
     margin-right: 5vw;
+    overflow: hidden;
+   
 }
 
 
@@ -77,4 +81,5 @@ body {
     position: relative;
     display: flex;
     margin-right: 5vw;  
+    overflow: hidden;
 }

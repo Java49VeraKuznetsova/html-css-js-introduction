@@ -14,8 +14,8 @@ function getPosterImages() {
     
    const arImages = moviesData.results.map(movie => 
       `<li class="movie-item"> <img class="movie-image" src="${httpPrefix}${movie.poster_path}">
-      <div class="movie-title">Title: ${movie.original_title} </div>
-      <div class="movie-desr">Description: ${movie.overview} </div></li>`);
+      <div class="movie-title"> ${movie.original_title} </div>
+      <div class="movie-desr"> ${movie.overview} </div></li>`);
 
     return arImages.join('');
 }
@@ -28,8 +28,8 @@ if (movie.popularity < curMovie.popularity)
 })
         const arImages = `<li class="movie-item"> <img class="movie-image" 
         src="${httpPrefix}${moviesData.results[ind].poster_path}">
-    <div class="movie-title">Title: ${moviesData.results[ind].original_title} </div>
-    <div class="movie-desr">Description: ${moviesData.results[ind].overview} </div></li>`;
+    <div class="movie-title"> ${moviesData.results[ind].original_title} </div>
+    <div class="movie-desr"> ${moviesData.results[ind].overview} </div></li>`;
 
    return arImages;
     
@@ -43,10 +43,11 @@ if (movie.popularity > curMovie.popularity)
     return movie;
 })
 
+
 const arImages = `<li class="movie-item"> <img class="movie-image" 
         src="${httpPrefix}${moviesData.results[ind].poster_path}">
-    <div class="movie-title">Title: ${moviesData.results[ind].original_title} </div>
-    <div class="movie-desr">Description: ${moviesData.results[ind].overview} </div></li>`;
+    <div class="movie-title"> ${moviesData.results[ind].original_title} </div>
+    <div class="movie-desr"> ${moviesData.results[ind].overview} </div></li>`;
 
     return arImages;
 }

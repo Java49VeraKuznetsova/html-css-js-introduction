@@ -22,6 +22,13 @@ function getPosterImages() {
 
 function getPopularMovies () {
 let ind = 0;
+/* V.R.
+const mostPopularMovie = moviesData.results.reduce ((movie, curMovie, index) => {
+if (movie.popularity < curMovie.popularity)
+    return movie;
+})
+After this you can use mostPopularMovie instead of moviesData.results[ind]
+*/
 const index = moviesData.results.reduce ((movie, curMovie, index) => {
 if (movie.popularity < curMovie.popularity)
     ind = index; return movie;
@@ -37,6 +44,9 @@ if (movie.popularity < curMovie.popularity)
 
 function getLeastPopularMovies () {
 let ind = 0;
+
+/* V.R. Look at my remark for getPopularMovies()
+*/
 const res = moviesData.results.reduce ((movie, curMovie, index) => {
 if (movie.popularity > curMovie.popularity)
     ind = index; 

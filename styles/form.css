@@ -16,6 +16,14 @@ flex-direction: column;
     height: 10vh;
     justify-content: space-around;
 }
+input:required:valid {
+    border-color: green;
+}
+/*
+input:required:invalid {
+    border-color: red;
+}
+*/
 .label-info {
     margin-top: 3vh;
     margin-right: 20vw;

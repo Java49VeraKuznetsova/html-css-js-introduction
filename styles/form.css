@@ -19,15 +19,11 @@ flex-direction: column;
 input:required:valid {
     border-color: green;
 }
-/*
-input:required:invalid {
-    border-color: red;
-}
-*/
-.label-info {
+
+.error-info {
     margin-top: 3vh;
-    margin-right: 20vw;
-    font-size: 1.2em;
+    text-align: center;
+   font-size: 1.3em;
     color: red;
 }
 .buttons {

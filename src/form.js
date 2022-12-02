@@ -61,7 +61,6 @@ function printWarning (string) {
           //  dateElement.classList.remove(HIDDEN);
          // dateElement.classList.remove()
          dateElement.innerHTML = '';
-        
         },5000) 
        // const string = `<label>Birthday must be from 1950 to ${new Date().getFullYear()}</label>`
         // console.log (string);

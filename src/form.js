@@ -22,13 +22,21 @@ function onSubmit(event) {
 function onChange(event) {
   let currentEventValue = event.target.value;
     if (event.target.name == "salary") {
+       /* V.R. The following will do your code more effective
+          const salary = +event.target.value;
+          */
         if(+event.target.value < MIN_SALARY || +event.target.value > MAX_SALARY){
           event.target.value='' ;
           printError(`Error: salary must be from ${MIN_SALARY} to ${MAX_SALARY}`)
         }
     }
+    // from Yuri: better else if(event.target.name == "birthDate"){...
+     // V.R. 'else' is redundant. It will be the same without it.
     else {
         if (event.target.name == "birthDate") {
+             /* V.R. The following will do your code more effective
+          const year = +event.target.value.substring(0,4);
+          */
           if(+event.target.value.substring(0,4) < MIN_YEAR ||
               +event.target.value.substring(0,4) > CURRENT_YEAR){
                 event.target.value='' ;    

@@ -10,10 +10,16 @@
 </head>
 
 <body>
-    <header class="form-title">
-        Employee Form
-    </header>
-    <form id="employee_form" onsubmit="onSubmit(event)" class="form-class">
+    <div class="buttons">
+        <button onclick="show(0)">Add employee</button>
+        <button onclick="show(1)">Show all employees</button>
+        <button onclick="show(2)">Show Employees by salary</button>
+    </div>
+
+    <section hidden class="form-title">
+        <label>Employee form</label>
+   
+    <form  id="employee_form" onsubmit="onSubmit(event)" class="form-class">
         <div class="two-inputs">
             <input type="text" name="employee_name" required placeholder="Enter employee name">
             <input type="email" name="email" placeholder="Enter email" required>
@@ -43,10 +49,41 @@
             <button type="submit">Submit</button>
             <button type="reset">Reset</button>
         </div>
-
-
-
     </form>
+</section>
+
+<section hidden class="print-all">
+    <label>All employees</label>
+    <div class="all_employees">
+        <ul class="empl-list">
+        </ul>
+    </div>
+
+
+</section> 
+
+<section hidden class="salary-from-to">
+    <label>Salary form</label>
+<form  id="salary_form" onsubmit="onSubmitSalary(event)" class="salary-class">
+    <div class="two-inputs">
+        <input type="number" name="salaryFrom" placeholder="Enter minimal salary"
+         onchange="onChangeSal(event)" required>
+         <input type="number" name="salaryTo" placeholder="Enter maximal salary"
+         onchange="onChangeSal(event)" required>
+    </div>
+    <div class="error-info">
+    </div>
+    <div class="buttons">
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </div>
+</form>
+<div class="print-salary">
+    <ul class="salary-list">
+    </ul>
+</div>
+</section>
+
     <script src="src/form.js"></script>
 </body>
 

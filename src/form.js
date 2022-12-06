@@ -1,4 +1,5 @@
 const inputElements = document.querySelectorAll(".form-class [name]");
+
 const MIN_SALARY = 1000;
 const MAX_SALARY = 40000;
 const MIN_YEAR = 1950;
@@ -9,6 +10,15 @@ const company = new Company();
 
 const dateErrorElement = document.getElementById("date_error");
 const salaryErrorElement = document.getElementById("salary_error");
+
+const sectionElements = document.querySelectorAll("section");
+const allEmployess = document.querySelector(".empl-list");
+const inputSalary = document.querySelectorAll(".salary-class")
+const errorElement = document.querySelector(".error-info");
+const printSalary = document.querySelector(".salary-list");
+// ????
+let salaryFrom = 0;
+  let salaryTo = MAX_SALARY;
 
 function onSubmit(event) {
     event.preventDefault();
@@ -21,7 +31,7 @@ function onSubmit(event) {
     )
     console.log(employee)
     company.hireEmployee(employee);
-    
+        
 }
 function onChange(event) {
 
@@ -31,6 +41,23 @@ function onChange(event) {
         validateBirthdate(event.target);
     }
 }
+
+function onSubmitSalary(event) {
+  event.preventDefault();
+  const employeesBySalary = company.getEmployeesBySalary (salaryFrom, salaryTo);
+    // inputSalary.hidden = true; ??
+   printSalary.innerHTML= getEpmloyeesPrint(employeesBySalary);
+  
+}
+
+
+function onChangeSal(event) {
+  
+  event.target.name == "salaryFrom" ?  salaryFrom = +event.target.value :
+  salaryTo = +event.target.value;
+  if (salaryTo <= salaryFrom)
+     showErrorMessageSalary(salaryFrom, salaryTo);
+ }
 function validateSalary(element) {
     const value = +element.value;
     if (value < MIN_SALARY || value > MAX_SALARY) {
@@ -51,7 +78,7 @@ function validateBirthdate(element) {
 
 }
 function showErrorMessage(element, message, errorElement) {
-    element.classList.add(ERROR_CLASS);
+   element.classList.add(ERROR_CLASS);
     errorElement.innerHTML = message;
     setTimeout(() => {
         element.classList.remove(ERROR_CLASS);
@@ -60,6 +87,13 @@ function showErrorMessage(element, message, errorElement) {
     }, TIME_OUT_ERROR_MESSAGE);
 }
 
+function showErrorMessageSalary(salaryFrom, salaryTo) {
+    errorElement.innerHTML =   `Maximum salary ${salaryTo} 
+     must be more then minimum salary ${salaryFrom}`;
+  setTimeout(() => {
+     errorElement.innerHTML = '';
+}, TIME_OUT_ERROR_MESSAGE); 
+}
 function getMaxYear() {
     return new Date().getFullYear();
 }
@@ -74,4 +108,41 @@ Company.prototype.getAllEmployees = function(){
 }
 Company.prototype.getEmployeesBySalary = function(salaryFrom, salaryTo) {
     //TODO
+    return company.employees.filter(empl => empl.salary >= salaryFrom
+         && empl.salary <= salaryTo);   
 }
+
+function printEmployees () {
+
+allEmployess.innerHTML = getEpmloyeesPrint(company.employees);
+
+}
+
+function getEpmloyeesPrint(employees){
+  const prEmployees = employees.map(empl =>
+    getItemEmlPrint(empl));
+   
+    return prEmployees.join('');
+}
+
+function getItemEmlPrint (employee) {
+  return `<li class="empl-card"> ${getOneEmplPrint(employee)} </li>`
+}
+function getOneEmplPrint (employee) {
+ 
+ return  `Name: ${employee.employee_name}<br>
+                E-mail: ${employee.email} <br>
+                Department: ${employee.department} <br>
+                Birtday: ${employee.birthDate}<br>
+                Salary: ${employee.salary}<br><br>`;
+
+}
+function show(index) {
+  sectionElements.forEach(section => section.hidden = true);
+  sectionElements[index].hidden = false;
+ // ??
+  if (index == 1)  printEmployees(company.employees);
+}
+
+
+

@@ -1,12 +1,40 @@
 body, html {
     height: 100%;
+    /* margin-top: 0; */
+   overflow:hidden; /* ?? */
 }
+
+.buttons {
+    margin-left: 30vw;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+   /* display: flex;
+    justify-content: space-around;
+    max-width: 90vw;
+    justify-content: center;
+    align-items: center; */
+}
+
 .form-title {
     text-align: center;
     font-size: 1.5em;
     font-weight: bold;
 }
 .form-class {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+
+.salary-from-to {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.salary-class {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,7 +62,73 @@ body, html {
     width: 40vw;
     
 }
+
+
 .error {
     border-color: red;
     color: red;
+}
+
+.error-info {
+    margin-top: 3vh;
+    margin-right: 20vw;
+    font-size: 0.8em;
+    text-align: center;
+   font-size: 1.3em;
+    color: red;
+}
+
+.print-all {
+    overflow-y: hidden;
+   max-height: 80vh; 
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    position: relative;
+    
+}
+.all_employees {
+    overflow:hidden;
+    max-width: 90vw;
+   max-height: 80vh; 
+    text-align: left;
+    font-size: 0.8em;
+    font-weight:normal;
+    flex-grow: 1;
+}
+
+.print-salary {
+    overflow:hidden;
+    max-width: 90vw;
+   max-height: 80vh; 
+    text-align: left;
+    font-size: 0.8em;
+    font-weight:normal;
+    flex-grow: 1;
+}
+.empl-list {
+    max-height: 70vh; 
+    overflow-y: scroll;
+    padding: 0;
+    margin: 0;
+    /*border-color: red;
+    border: red;
+    border: 0.5em; */
+
+}
+.salary-list {
+   
+    max-height: 80vh; 
+     overflow-y: scroll;
+     padding: 0;
+     margin: 0;
+      
+ 
+ }
+.empl-card {
+
+    display:flex;
+    flex-direction: row;
+    border-color: blue;
+    border: blue;
 }

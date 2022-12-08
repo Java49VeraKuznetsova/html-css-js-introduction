@@ -1,3 +1,8 @@
+/* V.R. The names of css and js files have to be 'company' or something like this.
+The same is with application's title (html).
+*/
+
+
 const inputElements = document.querySelectorAll(".form-class [name]");
 
 const MIN_SALARY = 1000;
@@ -52,7 +57,11 @@ function onSubmitSalary(event) {
 
 
 function onChangeSal(event) {
-  
+    /* V.R. This algorithm has a hole. Enter from=7000 and to=9000. Push button RESET.
+  Enter from=10000 and error appears. Do you undrstand why?
+  */
+ /* NECESSARY TO DO DOUBLE CHECKING */
+ 
   event.target.name == "salaryFrom" ?  salaryFrom = +event.target.value :
   salaryTo = +event.target.value;
   if (salaryTo <= salaryFrom)

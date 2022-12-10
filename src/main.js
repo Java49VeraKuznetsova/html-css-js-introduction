@@ -25,13 +25,11 @@ const buttonsMenuElement = document.querySelectorAll(".buttons-menu *");
 //functions of Book Form
 function onSubmit(event) {
     event.preventDefault();
-    console.log("submitted");
+    //console.log("submitted");
     const book = Array.from(inputElements).reduce(
         (res, cur) => {
             res[cur.name] = cur.value;
-            console.log ("3", cur.value);
-            console.log ("4", res);
-            return res;
+         return res;
         }, {}
     )
     console.log(book)
@@ -76,8 +74,7 @@ function showErrorMessage(element, message, errorElement) {
 
 function getMaxData() {
    const currentData = `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}`;
-    console.log ("cur date =", currentData)
-    return currentData;
+   return currentData;
 }
 /************************************************************* */
 
@@ -116,15 +113,10 @@ function onChangePageTo(event) {
 
 function onSubmitAuthor(event) {
     event.preventDefault();
-   
+
     const authorSearch = inputAuthorElements.value;
-    console.log ("9", authorSearch);
-  // const authorSearch = Array.from(inputAuthorElements)[0].value;
-   console.log ("18", inputAuthorElements);
-    console.log ("authorSearch=", authorSearch);
     const author = library.getAuthorBooks (authorSearch);
-    console.log ("6", author);
-   booksAuthorListElement.innerHTML = getBookItems(author);
+    booksAuthorListElement.innerHTML = getBookItems(author);
 }
 
 

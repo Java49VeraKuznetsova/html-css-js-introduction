@@ -23,6 +23,15 @@ body {
     margin-top: 5vh;
     
 }
+
+.one-inputs {
+    display: flex;
+    justify-content: space-around;
+    width: 80vw;
+    margin-top: 5vh;
+
+}
+
 .date-label {
     margin-top: 5vh;
     display: flex;
@@ -45,7 +54,7 @@ body {
     background-color: blue;
     color: white;
 }
-.employees-list {
+.books-list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -54,7 +63,7 @@ body {
     overflow-y: scroll;
     justify-content: space-around;
 }
-.employees-item {
+.books-item {
     max-width: 30vw;
     background-color: blue;
     border-radius: 25%;
@@ -63,12 +72,12 @@ body {
     margin-top: 10vh;
     overflow: hidden;
 }
-.employees-item-container {
+.books-item-container {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
-.employees-item-paragraph {
+.books-item-paragraph {
     background-color: white;
     font-weight: bold;
 }

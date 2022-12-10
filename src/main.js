@@ -2,7 +2,8 @@ import { Library } from "./data/library.js";
 const inputElements = document.querySelectorAll(".form-class [name]");
 const MIN_PAGE = 50;
 const MAX_PAGE = 2000;
-const MIN_DATA = new Date('1980-01-01');
+//const MIN_DATA = new Date('1980-01-01');
+const MIN_DATA = '1980-01-01';
 const maxData = getMaxData();
 const TIME_OUT_ERROR_MESSAGE = 5000;
 const ERROR_CLASS = "error";
@@ -15,6 +16,7 @@ const pageFormErrorElement = document.getElementById("page_form_error");
 const booksListElement = document.getElementById("books-all");
 const booksPageListElement = document.getElementById("books-page");
 const booksAuthorListElement = document.getElementById("books-author");
+const inputAuthorElements = document.querySelector(".author-form-class [name]");
 const sectionsElement = document.querySelectorAll("section");
 const buttonsMenuElement = document.querySelectorAll(".buttons-menu *");
 /************************************************************************** */
@@ -54,9 +56,8 @@ function validatePage(element) {
 
 }
 function validatePublishDate(element) {
-    const value = new Date (element.value);
-    if (value < MIN_DATA || value > maxData) {
-    const message = value < MIN_DATA ? `data must be ${MIN_DATA} or greater`:
+  if (element.value < MIN_DATA || element.value > maxData) {
+    const message = element.value < MIN_DATA ? `data must be ${MIN_DATA} or greater`:
              `data must be ${maxData} or less`;
         showErrorMessage(element, message, dateErrorElement) ;    
 
@@ -74,7 +75,9 @@ function showErrorMessage(element, message, errorElement) {
 }
 
 function getMaxData() {
-    return new Date();
+   const currentData = `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}`;
+    console.log ("cur date =", currentData)
+    return currentData;
 }
 /************************************************************* */
 
@@ -110,12 +113,15 @@ function onChangePageTo(event) {
 
 //function of Author Form
 
+
 function onSubmitAuthor(event) {
-    console.log ("7 - onSubmitAuthor");
-    console.log ("8", event.target);
-    const value = event.target.name;
-    console.log ("9", value);
     event.preventDefault();
+   
+    const authorSearch = inputAuthorElements.value;
+    console.log ("9", authorSearch);
+  // const authorSearch = Array.from(inputAuthorElements)[0].value;
+   console.log ("18", inputAuthorElements);
+    console.log ("authorSearch=", authorSearch);
     const author = library.getAuthorBooks (authorSearch);
     console.log ("6", author);
    booksAuthorListElement.innerHTML = getBookItems(author);

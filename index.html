@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
-    <link rel="stylesheet" href="styles/form.css">
+    <link rel="stylesheet" href="styles/library.css">
 </head>
 
 <body>
@@ -79,15 +79,16 @@
     </section>
    
     <section id="show-books-authors" hidden>
-        <form  id="author-form" class="form-class" onsubmit="onSubmitAuthor(event)">
+        <!-- V.R. -->
+        <form  id="author-form" class="author-form-class" onsubmit="onSubmitAuthor(event)">
             <div class="one-inputs">
                 <input type="text" name="authorSearch" required placeholder="Enter author">
-                </div>
+            </div>
                 <div class="buttons">
                     <button type="submit">Search</button>
                     <button type="reset">Reset</button>
                 </div>
-            </form>
+        </form>
             <ul class="books-list" id="books-author">
             </ul>
         </section>

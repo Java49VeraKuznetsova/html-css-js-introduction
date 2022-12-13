@@ -3,6 +3,7 @@ const inputElements = document.querySelectorAll(".form-class [name]");
 const MIN_PAGE = 50;
 const MAX_PAGE = 2000;
 //const MIN_DATA = new Date('1980-01-01');
+// see V.R. remarks from Vladimir
 const MIN_DATA = '1980-01-01';
 const maxData = getMaxData();
 const TIME_OUT_ERROR_MESSAGE = 5000;
@@ -44,6 +45,15 @@ function onChange(event) {
         validatePublishDate(event.target);
     }
 }
+
+/* V.R. You compare strings to validate date. It isn't effective way. Compare:
+const MIN_DATE = new Date('1980-01-01');
+const MAX_DATE = new Date();
+const selected-date = new Date(element.value);
+if(selected-date<MIN_DATE || selected-date>MAX_DATE) {
+    // and so on
+}
+*/
 function validatePage(element) {
     const value = +element.value;
     if (value < MIN_PAGE || value > MAX_PAGE) {

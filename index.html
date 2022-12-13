@@ -20,7 +20,7 @@
         <header class="form-title">
             Book Form
         </header>
-        <form id="book_form" onsubmit="onSubmit(event)" class="form-class">
+        <form id="book_form"  class="form-class">
             <div class="two-inputs">
                 <input type="text" name="book_title" required placeholder="Enter book title">
                 <input type="text" name="author" required placeholder="Enter author">
@@ -28,7 +28,7 @@
             </div>
             <div class="date-label">
                 <label>Enter publish date</label>
-                <input type="date" name="publishDate" required onchange="onChange(event)">
+                <input type="date" name="publishDate" required id="date_input">
 
             </div>
             <p id="date_error" class="error"></p>
@@ -43,7 +43,7 @@
                     <option value="History">History</option>
                     <option value="Jurnalizm">Jurnalism</option>
                 </select>
-                <input type="number" name="page" placeholder="Enter number of pages" onchange="onChange(event)" required>
+                <input type="number" name="page" placeholder="Enter number of pages" id = "page_input" required>
 
             </div>
             <p id="page_error" class="error"></p>

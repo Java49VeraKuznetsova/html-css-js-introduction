@@ -21,7 +21,7 @@ constructor(params){
     this.#maxPage = params.maxPage;
     this.#minDate = params.minDate;
     this.#maxDate = getMaxData ();
-    this.onChange(); 
+    this.onClose(); 
 }
 
 addSubmitHandler(processBookFun) {
@@ -41,7 +41,7 @@ this.#formElement.addEventListener("submit", (event) => {
 
 }
 
-onChange() {
+onClose() {
    
 this.#dateInputElement.addEventListener ("change", (event) => {
     this.validatePublishDate(event.target);

@@ -10,7 +10,6 @@ const MIN_DATA = '1980-01-01';
 const ACTIVE = "active"
 
 
-
 const pageFormErrorElement = document.getElementById("page_form_error");
 const booksListElement = document.getElementById("books-all");
 const booksPageListElement = document.getElementById("books-page");

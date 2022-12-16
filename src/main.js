@@ -1,23 +1,26 @@
 import { Library } from "./data/library.js";
+import { AuthorForm } from "./ui/Author.js";
 import { BookForm } from "./ui/BookForm.js";
-import { showErrorMessage } from "./ui/errorMessage.js";
+import { BookList } from "./ui/BookList.js";
+import { PageForm } from "./ui/PageForm.js";
 
 
 const MIN_PAGE = 50;
 const MAX_PAGE = 2000;
 const MIN_DATA = '1980-01-01';
-
 const ACTIVE = "active"
 
-
-const pageFormErrorElement = document.getElementById("page_form_error");
-const booksListElement = document.getElementById("books-all");
-const booksPageListElement = document.getElementById("books-page");
-const booksAuthorListElement = document.getElementById("books-author");
-const inputAuthorElements = document.querySelector(".author-form-class [name]");
 const sectionsElement = document.querySelectorAll("section");
 const buttonsMenuElement = document.querySelectorAll(".buttons-menu *");
 /**************************** ********************************************** */
+// const for printing
+
+const listAllBooks = new BookList ("books-all");
+const listAuthorBooks = new BookList("books-author");
+const listPageBooks = new BookList("books-page");
+
+// function of Main Book Form
+
 const library = new Library();
 
 const bookForm = new BookForm({idForm: "book_form", idDateInput:"date_input",
@@ -26,50 +29,27 @@ minPage: MIN_PAGE, maxPage: MAX_PAGE, minDate: MIN_DATA});
 
 bookForm.addSubmitHandler((book) => library.addBook(book));
 
-
-
-/************************************************************* */
-
-/********************************************************************************** */
-
-//functions of Pages Form
-
-let pageFrom = 0;
-let pageTo = 0;
-function onSubmitPage(event) {
-    event.preventDefault();
-    const books = library.getBooksByPage(pageFrom, pageTo);
-    booksPageListElement.innerHTML = getBookItems(books);
- 
-}
-function onChangePageFrom(event) {
-    const value = +event.target.value;
-    if (pageTo && value >= pageTo) {
-        showErrorMessage(event.target, "Page 'from' must be less than Page 'to'",
-        pageFormErrorElement);
-    } else {
-        pageFrom = value;
-    }
-}
-function onChangePageTo(event) {
-    const value = +event.target.value;
-    if (pageFrom && value < pageFrom) {
-        showErrorMessage(event.target, "Page 'To' must be greater than Page 'From'",
-        pageFormErrorElement);
-    }
-    pageTo = value;
-}
-
 //function of Author Form
 
+const paramsAuthor = ({idForm: "author-form", idAuthorInput: "authorSearch"});
 
-function onSubmitAuthor(event) {
-    event.preventDefault();
+const authorForm = new AuthorForm (paramsAuthor);
 
-    const authorSearch = inputAuthorElements.value;
+authorForm.addSubmitHandler((authorSearch) => {
     const author = library.getAuthorBooks (authorSearch);
-    booksAuthorListElement.innerHTML = getBookItems(author);
-}
+    listAuthorBooks.showBooksList(author);
+})
+
+//functions of Pages Form
+const paramsPages = ({idForm: "page-form", idPageFrom: "pageFrom",
+idPageTo: "pageTo",  idPageError: "page_form_error"});             
+
+const pageForm = new PageForm (paramsPages);
+
+pageForm.addSubmitHandler((pageFormObg) => {
+    const pages = library.getBooksByPage (pageFormObg.pageFrom, pageFormObg.pageTo);
+    listPageBooks.showBooksList(pages);
+})
 
 
 // ***********
@@ -80,27 +60,8 @@ function showSection(index) {
     sectionsElement[index].hidden = false;
        if (index == 1) {
         const books = library.getAllBooks();
-        booksListElement.innerHTML = getBookItems(books);
+             listAllBooks.showBooksList(books);
     }
 }
-function getBookItems(books) {
-    return books.map (e => 
-        `<li class="books-item">
-              <div class="books-item-container">
-                 <p class="books-item-paragraph">Title: ${e.book_title} </p>
-                 <p class="books-item-paragraph">Author: ${e.author} </p>
-                 <p class="books-item-paragraph">Genre: ${e.genre}</p>
-                 <p class="books-item-paragraph">Publishdate: ${e.publishDate}</p>
-                 <p class="books-item-paragraph">Page: ${e.page}</p>
-              </div>
-          </li>`).join('');
-}
 
-
-window.onChangePageTo = onChangePageTo;
 window.showSection = showSection;
-window.onChangePageFrom = onChangePageFrom;
-
-window.onSubmitPage = onSubmitPage;
-window.onSubmitAuthor = onSubmitAuthor;
-

@@ -14,7 +14,7 @@
         <button onclick="showSection(0)" class="btn-menu">Add Book</button>
         <button onclick="showSection(1)" class="btn-menu">Show All Books</button>
         <button onclick="showSection(2)" class="btn-menu">Show Books by Pages</button>
-        <button onclick="showSection(3)" class="btn-menu">Show Books by author</button>
+        <button onclick="showSection(3)" class="btn-menu">Show Books by Author</button>
     </div>
     <section id="add-book" hidden>
         <header class="form-title">
@@ -62,10 +62,10 @@
         </ul>
     </section>
     <section id="show-books-pages" hidden>
-        <form id="page-form" class="form-class" onsubmit="onSubmitPage(event)">
+        <form id="page-form" class="form-class">
             <div class="two-inputs">
-                <input type="number" name="pageFrom" placeholder="Enter page 'From'" onchange="onChangePageFrom(event)" required>
-                <input type="number" name="pageTo" placeholder="Enter page 'To'" onchange="onChangePageTo(event)" required>
+                <input type="number" id = "pageFrom" name="pageFrom" placeholder="Enter page 'From'" required>
+                <input type="number" id = "pageTo" name="pageTo" placeholder="Enter page 'To'"  required>
             </div>
             <div class="buttons">
                 <button type="submit">Search</button>
@@ -79,10 +79,10 @@
     </section>
    
     <section id="show-books-authors" hidden>
-        <!-- V.R. -->
-        <form  id="author-form" class="author-form-class" onsubmit="onSubmitAuthor(event)">
+        
+        <form  id="author-form" class="author-form-class" >
             <div class="one-inputs">
-                <input type="text" name="authorSearch" required placeholder="Enter author">
+                <input type="text" id="authorSearch" name="authorSearch" required placeholder="Enter author">
             </div>
                 <div class="buttons">
                     <button type="submit">Search</button>

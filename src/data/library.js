@@ -8,6 +8,7 @@ export class Library {
         book.page = +book.page;
     this.books.push(book);
     }
+    
     getAllBooks() {
         return this.books;
     }

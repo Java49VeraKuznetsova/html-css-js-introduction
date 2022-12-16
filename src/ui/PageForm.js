@@ -12,9 +12,7 @@ constructor(paramsPages) {
     this.#formElement = document.getElementById(paramsPages.idForm);
     this.#PageFromInputElement = document.getElementById(paramsPages.idPageFrom);
     this.#PageToInputElement = document.getElementById(paramsPages.idPageTo);
-    this.#PageErrorElement = document.getElementById(paramsPages.idPageError);
-  
-   
+    this.#PageErrorElement = document.getElementById(paramsPages.idPageError);  
     this.#pageFrom = 0;
     this.#pageTo = 0;
     this.OnClose();
@@ -26,9 +24,8 @@ addSubmitHandler(processPageFun) {
     this.#formElement.addEventListener ("submit", (event) => {
         event.preventDefault();
    const pageFormObg = {pageFrom: this.#pageFrom, pageTo: this.#pageTo} 
-   console.log ("1 addSubmt", pageFormObg)
-   const books = processPageFun(pageFormObg);
-    })
+   processPageFun(pageFormObg);
+})
     this.#formElement.addEventListener ("reset", (event) => {
        this.#pageFrom = 0;
        this.#pageTo = 0;  
@@ -54,7 +51,6 @@ onChangePageFrom(event) {
     } else {
         this.#pageFrom = value;
     }
-    console.log ("2 Page From", value, this.#pageFrom, this.#pageTo)
 }
 
 onChangePageTo(event) {
@@ -64,8 +60,7 @@ onChangePageTo(event) {
         this.#PageErrorElement);
     }
     this.#pageTo = value;
-    console.log ("3 Page To", value, this.#pageFrom, this.#pageTo)
-}
+   }
 }
 
 

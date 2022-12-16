@@ -25,15 +25,13 @@ const library = new Library();
 
 const bookForm = new BookForm({idForm: "book_form", idDateInput:"date_input",
 idPageInput: "page_input", idDateError: "date_error", idPageError: "page_error",
-minPage: MIN_PAGE, maxPage: MAX_PAGE, minDate: MIN_DATA});
-
-bookForm.addSubmitHandler((book) => library.addBook(book));
+minPage: MIN_PAGE, maxPage: MAX_PAGE, minDate: MIN_DATA,
+addBookFn: book => library.addBook(book)});
 
 //function of Author Form
 
-const paramsAuthor = ({idForm: "author-form", idAuthorInput: "authorSearch"});
 
-const authorForm = new AuthorForm (paramsAuthor);
+const authorForm = new AuthorForm ({idForm: "author-form", idAuthorInput: "authorSearch"});
 
 authorForm.addSubmitHandler((authorSearch) => {
     const author = library.getAuthorBooks (authorSearch);
@@ -41,10 +39,10 @@ authorForm.addSubmitHandler((authorSearch) => {
 })
 
 //functions of Pages Form
-const paramsPages = ({idForm: "page-form", idPageFrom: "pageFrom",
-idPageTo: "pageTo",  idPageError: "page_form_error"});             
+       
 
-const pageForm = new PageForm (paramsPages);
+const pageForm = new PageForm ({idForm: "page-form", idPageFrom: "pageFrom",
+idPageTo: "pageTo",  idPageError: "page_form_error"});
 
 pageForm.addSubmitHandler((pageFormObg) => {
     const pages = library.getBooksByPage (pageFormObg.pageFrom, pageFormObg.pageTo);

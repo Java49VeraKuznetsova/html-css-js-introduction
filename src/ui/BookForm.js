@@ -22,9 +22,12 @@ constructor(params){
     this.#minDate = params.minDate;
     this.#maxDate = getMaxData ();
     this.onClose(); 
+   
+    this.addBookFn = params.addBookFn;
+    this.addSubmitHandler();
 }
 
-addSubmitHandler(processBookFun) {
+addSubmitHandler() {
 this.#formElement.addEventListener("submit", (event) => {
     event.preventDefault();
     console.log("submitted");
@@ -35,7 +38,7 @@ this.#formElement.addEventListener("submit", (event) => {
             }, {}
         )
         console.log(book)
-        processBookFun(book);
+        this.addBookFn(book);
             
 })
 

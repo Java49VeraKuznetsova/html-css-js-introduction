@@ -180,6 +180,11 @@ C: Error
 */
 
 /* 25 
+const num = parseInt("7*6");
+console.log (num);
+*/
+
+/* 26 
 
 function getInfo(member, year) {
     member.name = "Lydia";
@@ -195,3 +200,70 @@ function getInfo(member, year) {
   
  */
 
+  /* 31
+
+  
+  let num = 10;
+
+  const increaseNumber = () => num++;
+  const increasePassedNumber = number => number++;
+  
+  const num1 = increaseNumber();
+  const num2 = increasePassedNumber(num1);
+  
+  console.log(num);
+  console.log(num1);
+  console.log(num2);
+  
+  */
+  
+  /* 32
+
+  
+  [1, 2, 3, 4].reduce((x, y) => console.log(x, y));
+  */
+
+  /*  33
+
+  
+  function addToList(item, list) {
+    return list.push(item);
+  }
+  
+  const result = addToList("apple", ["banana"]);
+  console.log(result);
+  
+  */
+
+/* 34
+const list = [1 + 2, 1 * 2, 1 / 2]
+console.log(list)
+*/
+
+/* 35
+function sayHi(name) {
+    return `Hi there, ${name}`
+  }
+  
+  console.log(sayHi())
+  
+*/
+
+/* 36
+console.log("I want pizza"[0])
+
+*/
+
+/*  37
+
+*/
+function checkAge(age) {
+    if (age < 18) {
+      const message = "Sorry, you're too young."
+    } else {
+      const message = "Yay! You're old enough!"
+    }
+  
+    return message
+  }
+  console.log(checkAge(21))

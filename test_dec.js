@@ -131,3 +131,67 @@ for (var i = 0; i < 3; i++) {
   
   console.log(num);
   */
+
+  /* 17
+
+  
+  const foo = () => console.log("First");
+  const bar = () => setTimeout(() => console.log("Second"));
+  const baz = () => console.log("Third");
+  
+  bar();
+  foo();
+  baz();
+  */
+
+  /* 21
+
+  
+  let person = { name: "Lydia" };
+  const members = [person];
+  person = null;
+  
+  console.log(members);
+*/
+/* 22
+  const person = {
+    name: "Lydia",
+    age: 21
+  };
+  
+  for (const item in person) { //iterates keys of an object
+    console.log(item);
+  }
+  
+  */
+
+  /*23
+ console.log(3 + 4 + "5");
+  */
+
+ /* 24 
+const numbers = [1, 2, 3];
+numbers[10] = 11;
+console.log(numbers.length);
+A: 11
+B: 4
+C: Error
+
+*/
+
+/* 25 
+
+function getInfo(member, year) {
+    member.name = "Lydia";
+    year = "1998";
+  }
+  
+  const person = { name: "Sarah" };
+  const birthYear = "1997";
+  
+  getInfo(person, birthYear);
+  
+  console.log(person, birthYear);
+  
+ */
+

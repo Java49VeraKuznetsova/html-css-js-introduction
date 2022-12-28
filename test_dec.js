@@ -256,7 +256,7 @@ console.log("I want pizza"[0])
 
 /*  37
 
-*/
+
 function checkAge(age) {
     if (age < 18) {
       const message = "Sorry, you're too young."
@@ -267,3 +267,50 @@ function checkAge(age) {
     return message
   }
   console.log(checkAge(21))
+  */
+
+  /* 43
+
+  
+ console.log (Boolean(0), Boolean(new Number(0)),
+ Boolean (("")), Boolean ((" ")), Boolean (new Boolean(false)),
+ Boolean (undefined));
+
+ (() => {
+  let x, y;
+  try {
+    throw new Error();
+  } catch (x) {
+    (x = 1), (y = 2);
+    console.log(x);
+  }
+  console.log(x);
+  console.log(y);
+})();
+
+*/
+
+/* 44
+(() => {
+  let x, y;
+  try {
+    throw new Error();
+  } catch (x) {
+    (x = 1), (y = 2);
+    console.log(x);
+  }
+  console.log(x);
+  console.log(y);
+})();
+*/
+
+/* 45
+
+console.log ([[0, 1], [2, 3]].reduce(
+  (acc, cur) => {
+    return acc.concat(cur);
+  },
+  [1, 2]
+)
+)
+*/

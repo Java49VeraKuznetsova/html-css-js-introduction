@@ -314,3 +314,54 @@ console.log ([[0, 1], [2, 3]].reduce(
 )
 )
 */
+
+/* from Vladimir No 1 
+
+
+
+function doReverse(p1) {
+  return p1.split("").reverse().join("")
+}
+function someFunction(p1, p2, p3) {
+  p1 = doReverse(p1);
+  p2 = ['1', '2', '3'];
+  p3.push('9999');
+}
+let a = 'xyz';
+let b = ['123', '567'];
+let c = ['abc', 'def'];
+someFunction(a, b, c);
+console.log(a);
+console.log(b);
+console.log(c);
+
+xyz
+[ '123', '567' ]
+[ 'abc', 'def', '9999' ]
+*/
+
+/* from Vladimir No 2
+var number = 10;
+var display = function () {
+console.log(number);
+var number = 20;
+};
+display();
+*/
+
+/* from Vladimir No 3
+ */
+
+async function callMe() {
+  console.log(1);
+  await crazyFunction();
+  console.log(3);
+}
+function crazyFunction() {
+  return new Promise((res, rej) => {
+    setTimeout(() => {
+      console.log(2);
+    },1000);
+  });
+}
+callMe();
